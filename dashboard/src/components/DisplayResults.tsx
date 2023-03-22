@@ -14,6 +14,7 @@ interface ScanResult {
 
 const GridView: React.FC = () => {
   const [scanResults, setScanResults] = useState<ScanResult[]>([]);
+  // eslint-disable-next-line
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {

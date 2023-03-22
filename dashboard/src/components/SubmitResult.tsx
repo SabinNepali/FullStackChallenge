@@ -47,6 +47,10 @@ const SubmitScanResultsForm: React.FC<IProps> = () => {
     setModalOpen(false);
   };
 
+  const handleViewResult = () => {
+    window.location.href = `/display`;
+  };
+
   return (
     <div className="SubmitFormDivWrapper">
       <Navbar></Navbar>
@@ -135,6 +139,7 @@ const SubmitScanResultsForm: React.FC<IProps> = () => {
         </Modal.Content>
         <Modal.Actions>
           <Button onClick={handleModalOk}>Ok</Button>
+          <Button onClick={handleViewResult}>View Results</Button>
           <Button onClick={() => setModalOpen(false)}>Close</Button>
         </Modal.Actions>
       </Modal>
