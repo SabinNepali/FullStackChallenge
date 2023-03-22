@@ -52,7 +52,7 @@ interface Finding {
         <div className="gridContainer">
           <br />
           <br />
-          <h2>Findings List</h2>
+          <h2>Findings List (Id: {scanId})</h2>
           {loading && <p>Loading findings...</p>}
           {!loading && (
             <Table celled>
