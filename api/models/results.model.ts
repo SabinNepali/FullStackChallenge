@@ -17,7 +17,7 @@ const SecurityScanResult = db.define('ScanResults', {
   },
   findings: {
     type: DataTypes.STRING,
-    allowNull: true,
+    allowNull: false,
   },
   queuedAt: {
     type: DataTypes.DATE,

@@ -17,6 +17,12 @@ const SubmitScanResultsForm: React.FC<IProps> = () => {
 
 
   const handleSubmit = async () => {
+
+    if(!repositoryName || !findings || !queuedAt) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
     try {
       const data = {
         status,
@@ -77,7 +83,7 @@ const SubmitScanResultsForm: React.FC<IProps> = () => {
             />
           </Form.Field>
           <Form.Field>
-            <label>Repository Name</label>
+            <label>Repository Name<span className="required-asterisk">*</span></label>
             <Form.Input
               placeholder="Repository Name"
               value={repositoryName}
@@ -85,7 +91,7 @@ const SubmitScanResultsForm: React.FC<IProps> = () => {
             />
           </Form.Field>
           <Form.Field>
-            <label>Findings</label>
+            <label>Findings<span className="required-asterisk">*</span></label>
             <Form.TextArea
               placeholder=""
               value={findings}
@@ -101,7 +107,7 @@ const SubmitScanResultsForm: React.FC<IProps> = () => {
           </Form.Field>
 
           <Form.Field>
-            <label>Queued At</label>
+            <label>Queued At<span className="required-asterisk">*</span></label>
             <Form.Input
               type="date"
               value={queuedAt.toISOString().substr(0, 10)}

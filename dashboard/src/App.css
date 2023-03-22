@@ -54,3 +54,9 @@
   justify-content: center;
   align-items: center;
 }
+
+.required-asterisk {
+  color: red;
+  margin-left: 3px;
+}
+
