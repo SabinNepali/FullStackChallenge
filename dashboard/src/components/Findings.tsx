@@ -44,6 +44,19 @@ interface Finding {
           });
       }
     }, [scanId]);
+
+    const severityToColor = (severity: string): string => {
+      switch (severity) {
+        case 'HIGH':
+          return 'red';
+        case 'MEDIUM':
+          return 'blue';
+        case 'LOW':
+          return 'green';
+        default:
+          return 'black';
+      }
+    };
   
   
     return (
@@ -70,7 +83,7 @@ interface Finding {
                   <Table.Row key={id}>
                     <Table.Cell>{finding.ruleId}</Table.Cell>
                     <Table.Cell>{finding.metadata.description}</Table.Cell>
-                    <Table.Cell>{finding.metadata.severity}</Table.Cell>
+                    <Table.Cell style={{ color: severityToColor(finding.metadata.severity) }}>{finding.metadata.severity}</Table.Cell>
                     <Table.Cell>
                       {finding.location.path} : {finding.location.positions.begin.line}
                     </Table.Cell>
